@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  persona: one
+  libro: one
+  prestador: MyString
+
+two:
+  persona: two
+  libro: two
+  prestador: MyString

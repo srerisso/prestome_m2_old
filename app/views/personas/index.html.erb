@@ -1,0 +1,15 @@
+<h1>Hello Personas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+  </tr>
+
+  <% @personas.each do |p| %>
+    <tr>
+      <td><%= p.nombre %></td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+  <% end %>
+</table>
