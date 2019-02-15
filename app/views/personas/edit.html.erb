@@ -1,0 +1,12 @@
+<h1>Edit Persona</h1>
+
+<%= form_with scope: :persona, method: :put, url: persona_path, local: true do |form| %>
+  <p>
+    <%= form.label :nombre %><br>
+    <%= form.text_field :nombre %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

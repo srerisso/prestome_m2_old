@@ -1,0 +1,25 @@
+<h1>New Libro</h1>
+
+<%= form_with scope: :libro, url: libros_path, local: true do |form| %>
+  <p>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :titulo %>
+  </p>
+
+  <p>
+    <%= form.label :isbn %><br>
+    <%= form.text_field :isbn %>
+  </p>
+
+  <p>
+    <%= form.label :fotos %><br>
+    <%= form.file_field :fotos, multiple: :true %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', libros_path %>

@@ -10,6 +10,15 @@ class PersonasController < ApplicationController
   def new
   end
 
+  def edit
+    @persona = Persona.find(params[:id])
+  end
+
+  def update
+    # update Persona
+    Persona.save(params[:id])
+  end
+
   def create
     @persona = Persona.new(persona_params)
 

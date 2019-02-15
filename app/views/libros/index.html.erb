@@ -1,0 +1,30 @@
+<div>
+  <p><%= link_to 'Personas', controller: 'personas' %></p>
+  <p><%= link_to 'Libros', controller: 'libros' %></p>
+  <p><%= link_to 'Prestamos', controller: 'prestamos' %></p>
+</div>
+
+<h1>Libros index</h1>
+<table>
+  <tr>
+    <th colspan="2">Título</th>
+    <th>ISBN</th>
+    <th>Fotos</th>
+  </tr>
+
+  <% @libros.each do |libro| %>
+    <tr>
+      <td><%= libro.titulo %></td>
+      <td><%= libro.isbn %></td>
+      <td><% if libro.fotos.attached? %>
+            <% libro.fotos.each do |foto| %>
+              <%= image_tag foto.variant(resize: "200x200", rotate: "90") %></td>
+            <% end %>
+          <% end %>
+      <td><%= link_to 'Edit', edit_libro_path(libro) %></td>
+      <td><%= link_to 'Delete', libro, method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New libro', new_libro_path %>

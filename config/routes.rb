@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :users
+  resources :users, :libros, :prestamos
   resources :personas
 
-  root 'personas#index'
+  root 'libros#index'
 end
