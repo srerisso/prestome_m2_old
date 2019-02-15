@@ -14,6 +14,10 @@ class LibrosController < ApplicationController
     redirect_to @libros
   end
 
+  def edit
+    @libro = Libro.find(params[:id])
+  end
+
   private
     def libro_params
       params.require(:libro).permit(:titulo, :isbn, fotos: [])

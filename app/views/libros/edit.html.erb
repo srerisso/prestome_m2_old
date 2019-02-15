@@ -1,0 +1,25 @@
+<h1>Edit Libro</h1>
+
+<%= form_with scope: :libro, method: :put, url: libro_path, local: true do |form| %>
+  <p>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :titulo %>
+  </p>
+
+  <p>
+    <%= form.label :isbn %><br>
+    <%= form.text_field :isbn %>
+  </p>
+
+  <p>
+    <% if @libro.fotos.attached? %>
+        <% @libro.fotos.each do |foto| %>
+          <%= image_tag foto.variant(resize: "200x200", rotate: "90") %>
+        <% end %>
+      <% end %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
